@@ -34,7 +34,7 @@ Patch $sub "if (months >= DISCOUNT_FROM_MONTHS)" "if (months > DISCOUNT_FROM_MON
 Run "mvn_03_broken_boundary"
 $xml = [xml](Get-Content "target\surefire-reports\TEST-ua.duikt.pr8.SubscriptionTest.xml" -Encoding UTF8)
 $failed = $xml.testsuite.testcase | Where-Object { $_.failure } | ForEach-Object { $_.name }
-[IO.File]::WriteAllLines("$PWD\outputsailed_cases_boundary.txt", @("Тести, що впали при зламаній межі (>= 6 замінено на > 6):") + $failed, $enc)
+[IO.File]::WriteAllLines("$PWD\outputs\failed_cases_boundary.txt", @("Тести, що впали при зламаній межі (>= 6 замінено на > 6):") + $failed, $enc)
 "== failed cases (boundary) =="; $failed
 Patch $sub "if (months > DISCOUNT_FROM_MONTHS)" "if (months >= DISCOUNT_FROM_MONTHS)"
 
