@@ -1,0 +1,4 @@
+Тести, що впали при зламаній межі (>= 6 замінено на > 6):
+RenewalServiceTest.renewCalculatesTotalAndSendsReceipt
+SubscriptionTest.discountFromSixMonths
+SubscriptionTest.priceOnBoundaries(int, double)[3]  (months=6)
