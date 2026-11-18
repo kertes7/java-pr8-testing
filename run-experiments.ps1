@@ -47,7 +47,7 @@ Patch $svc "months, total)); */" "months, total));"
 
 # E) контрольний запуск після відновлення
 Run "mvn_05_restored_ok"
-# F) налаштування argLine: Mockito як Java-агент — попередження зникає
+# F) (pom.xml вже пропатчено — цей крок виконується один раз) налаштування argLine: Mockito як Java-агент — попередження зникає
 Patch "pom.xml" "</plugins>" "    <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
